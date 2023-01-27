@@ -22,8 +22,12 @@ def max_and_simple_del(num)
     end
 end
 
-puts "Введите число для поиска его максимального простого делителя"
-n = gets.to_i
-puts sprintf("Введённое число, %s", n)
-puts sprintf("Результат для введённого числа: %s", max_and_simple_del(n))
+def method1()
+    puts "Введите число для поиска его максимального простого делителя"
+    n = gets.to_i
+    puts sprintf("Введённое число, %s", n)
+    puts sprintf("Результат для введённого числа: %s", max_and_simple_del(n))
+end 
+
+method1
 
