@@ -1,5 +1,7 @@
 # вариант 3
 # метод 1, найти максимальный простой делитель числа
+# метод 2, найти произведение цифр числа, не делящихся на 5
+# метод 3, 
 
 def simple(num)
     return false if num <= 1
@@ -22,6 +24,18 @@ def max_and_simple_del(num)
     end
 end
 
+def multOfNotDivisibleBy5(num)
+    res = 1
+    while num != 0
+        k = num % 10
+        if k % 5 != 0
+            res *= k
+        end
+        num /= 10
+    end
+    return res
+end
+
 def method1()
     puts "Введите число для поиска его максимального простого делителя"
     n = gets.to_i
@@ -29,5 +43,11 @@ def method1()
     puts sprintf("Результат для введённого числа: %s", max_and_simple_del(n))
 end 
 
-method1
+def method2()
+    puts "Введите число для поиска его произведения цифр, не делящихся на 5"
+    n = gets.to_i
+    puts sprintf("Введённое число, %s", n)
+    puts sprintf("Результат для введённого числа: %s", multOfNotDivisibleBy5(n))
+end 
 
+method2
