@@ -1,4 +1,4 @@
-system("color A")
+system "color A"
 require 'open3'
 
 puts "Введите команду для выполнения её OS, например Time или Tree"

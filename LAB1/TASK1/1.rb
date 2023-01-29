@@ -1,2 +1,2 @@
-system("color A")
+system "color A"
 puts "Hello World"

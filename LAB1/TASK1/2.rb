@@ -1,10 +1,15 @@
-system("color A")
+system "color A" 
 
-puts "Введите ваше имя"
-name = gets.chomp()
-puts sprintf("Привет, %s, рады вас видеть!\nКакой у вас любимый ЯП?🥴", name)
-lang = gets.downcase().chomp()
+if ARGV.count < 1
+    puts "🤡"
+    return 
+end
+  
+user = ARGV[0]
+puts "Привет, #{user}!"
 
+puts "Какой у вас любимый язык программирования?"
+lang = STDIN.gets.chomp.downcase
 
 if lang == "ruby"
     puts "Вы подлиза, нехорошо так!😃"
@@ -15,5 +20,5 @@ elsif lang == "c-sharp"
 elsif lang == "pascal"
     puts "🤓"
 else 
-    puts "Не слышал ничего об этом языке, но хорошо, что вы его знаете👍"
+    puts "Скоро будет ruby👍"
 end
