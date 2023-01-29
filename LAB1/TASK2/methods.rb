@@ -13,136 +13,70 @@ def simple(num)
     true
 end
 
-def max_and_simple_del(num)
-    max = -1
-    for x in 0..num        
-        if simple(x) == true and x > max and num % x == 0
-            max = x
-        end 
-    end
-    if max == -1
-        return "У числа нет простого делителя"
-    else
-        return max
-    end
-end
-
-#################################################################################
-
-def multOfNotDivisibleBy5(num)
-    res = 1
-    while num != 0
-        k = num % 10
-        if k % 5 != 0
-            res *= k
-        end
-        num /= 10
-    end
-    return res
-end
-
-#################################################################################
-
-def NOD(a,b)
-    while a!=b
-        if a > b
-            a -= b
-        else b -= a    
-        end
-    end
-    return a
-end
-
-def max_and_Not_simple_Nechet_del(num)
-    max = -1
-    for x in 1..num        
-        if simple(x) == false and x > max and num % x == 0 and x % 2 != 0
-            max = x
-        end 
-    end
-    if max == -1
-        return "У числа нет непростого делителя"
-    else
-        return max
-    end
-end
-
-def multOfNumbersOfNum(num)
-    res = 1
-    while num != 0
-        k = num % 10        
-        res *= k        
-        num /= 10
-    end
-    return res
-end
-
-#################################################################################
-
-def method1()
-    puts "Введите число для поиска его максимального простого делителя"
-    n = gets.to_i
-    puts sprintf("Введённое число, %s", n)
-    puts sprintf("Результат для введённого числа: %s", max_and_simple_del(n))
-end 
-
-def method2()
-    puts "Введите число для поиска его произведения цифр, не делящихся на 5"
-    n = gets.to_i
-    puts sprintf("Введённое число, %s", n)
-    puts sprintf("Результат для введённого числа: %s", multOfNotDivisibleBy5(n))
-end 
-
-def method3()
-    puts "Введите число для поиска его НОД максимального нечетного непростого делителя 
-числа и произведения цифр данного числа."
-    n = gets.to_i
-    if n == 0
-        puts "Для нуля невозможно"
-        return 0
-    end
-    puts sprintf("Введённое число, %s", n)
-    a = max_and_Not_simple_Nechet_del(n)
-    b = multOfNumbersOfNum(n)
-    nod = NOD(a,b)
-    puts sprintf("Максимальный нечетный непростой делитель для введённого числа: %s", a)
-    puts sprintf("Произведение цифр данного числа: %s", b)
-    puts sprintf("Нод двух указанных ранее величин: %s", nod)
-end    
-
-#################################################################################
-
-system("color A")
-
-puts "Какой метод запустить?"
-puts "метод 1, найти максимальный простой делитель числа
-метод 2, найти произведение цифр числа, не делящихся на 5
-метод 3, Найти НОД максимального нечетного непростого делителя
-числа и произведения цифр данного числа."
-puts "0 - выход из программы"
-
-m = gets.to_i
-
-
-while m != 0
-    case m
-    when 1
-        method1
-        puts "введите номер следующего метода"
-        m = gets.to_i
-    when 2
-        method2
-        puts "введите номер следующего метода"
-        m = gets.to_i
-    when 3
-        method3
-        puts "введите номер следующего метода"
-        m = gets.to_i
-    when 0
-        puts "выход из программы"
+# метод 1, найти максимальный простой делитель числа
+def maxAndSimpleDel_Task(num)
+    res = -1
+    num.downto(1).each { |div| res = div if simple(div) and div > res and num % div == 0}
+    if res == -1
+        return "у числа нет делителя"
     else 
-        puts "вы указали отсутствующую опцию, введите номер заново"
-        m = gets.to_i
+        return res
     end
 end
+
+#################################################################################
+
+# метод 2, найти произведение цифр числа, не делящихся на 5
+def multOfNotDivisibleByFive(num)
+    res, count = 1, 0
+    num.digits.each { 
+        |dig| 
+        if dig % 5 != 0
+            res *= dig 
+            count+=1 
+        end
+    }
+    if count == 0
+        return "у числа нет подходящих цифр"
+    else 
+        return res
+    end
+end
+
+#################################################################################
+
+def nod_Task(num)
+    maxDel = -1
+    mult = 1
+    num.downto(1).each { 
+        |div| 
+        if div > maxDel and !simple(div) and div % 2 != 0 and num % div == 0 and div != 0
+            maxDel = div            
+        end        
+    }
+    num.digits.each { |dig| mult *= dig}
+   
+    puts "Максимальный непростой нечётный делитель числа, #{maxDel}"
+    puts "Произведение цифр данного числа, #{mult}"
+    if mult == 0
+        return "\nНевозможно найти нод т.к произведение цифр числа равно нулю"
+    end
+    while maxDel!=mult
+        if maxDel > mult
+            maxDel -= mult
+        else mult -= maxDel    
+        end
+    end
+    return maxDel
+end
+
+#################################################################################
+
+system "color a"
+puts "Введите число для обработки"
+number = gets.to_i
+
+puts "метод 1, найти максимальный простой делитель числа: #{maxAndSimpleDel_Task(number)}"
+puts "метод 2, найти произведение цифр числа, не делящихся на 5: #{multOfNotDivisibleByFive(number)}"
+puts "метод 3, Найти НОД максимального нечетного непростого делителя\n числа и произведения цифр данного числа: #{nod_Task(number)}"
 
