@@ -41,7 +41,11 @@ def globMin(arr, index)
   end
 end
 
-# arr = [4,6,1,7,3]
+def rotateLeftByOnePos(arr)
+  arr.rotate(1)
+end
+
+arr = [4,6,1,7,3]
 # index = 0
 # puts globMin(arr,index)
 # index = 1
@@ -54,3 +58,4 @@ end
 # puts globMin(arr,index)
 # index = 5
 # puts globMin(arr,index)
+puts rotateLeftByOnePos(arr)
