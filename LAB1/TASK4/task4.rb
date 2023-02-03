@@ -52,7 +52,19 @@ def firstEvenAfterNotEven(arr)
   arr.partition.with_index { |c,i| i.even?}
 end
 
-arr = [4,6,1,7,3]
+# 1.51. Для введенного списка построить два списка L1 и L2, где элементы L1
+# это неповторяющиеся элементы исходного списка, а элемент списка L2 с
+# номером i показывает, сколько раз элемент списка L1 с таким номером
+# повторяется в исходном.
+def unigElemsAndCount(arr)
+  l1 = arr.uniq
+  l2 = l1.clone
+  l2.collect!.with_index { |x, i| x = arr.count(l2[i]) }
+  return arr.inspect, l1.inspect, l2.inspect
+end
+
+
+arr = [4,6,1,7,3,5,6,1,2,4,3]
 # index = 0
 # puts globMin(arr,index)
 # index = 1
@@ -65,4 +77,4 @@ arr = [4,6,1,7,3]
 # puts globMin(arr,index)
 # index = 5
 # puts globMin(arr,index)
-puts firstEvenAfterNotEven(arr)
+puts unigElemsAndCount(arr)
