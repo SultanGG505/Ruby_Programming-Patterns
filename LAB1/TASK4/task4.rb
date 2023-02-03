@@ -45,6 +45,13 @@ def rotateLeftByOnePos(arr)
   arr.rotate(1)
 end
 
+def firstEvenAfterNotEven(arr)
+  # odd нечётный
+  # arr.filter.with_index { |x,i| i.odd? }
+  # arr.filter.with_index { |x,i| !i.odd? }
+  arr.partition.with_index { |c,i| i.even?}
+end
+
 arr = [4,6,1,7,3]
 # index = 0
 # puts globMin(arr,index)
@@ -58,4 +65,4 @@ arr = [4,6,1,7,3]
 # puts globMin(arr,index)
 # index = 5
 # puts globMin(arr,index)
-puts rotateLeftByOnePos(arr)
+puts firstEvenAfterNotEven(arr)
