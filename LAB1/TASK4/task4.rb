@@ -49,7 +49,7 @@ def firstEvenAfterNotEven(arr)
   # odd нечётный
   # arr.filter.with_index { |x,i| i.odd? }
   # arr.filter.with_index { |x,i| !i.odd? }
-  arr.partition.with_index { |c,i| i.even?}
+  arr.partition.with_index { |c, i| i.even? }
 end
 
 # 1.51. Для введенного списка построить два списка L1 и L2, где элементы L1
@@ -63,18 +63,34 @@ def unigElemsAndCount(arr)
   return arr.inspect, l1.inspect, l2.inspect
 end
 
+# arr = [4,6,1,7,3,5,6,1,2,4,3]
+puts "Введите массив для обработки"
+arr = gets.chomp.split(' ').map(&:to_i)
+puts "Введённый массив: #{arr.inspect}"
 
-arr = [4,6,1,7,3,5,6,1,2,4,3]
-# index = 0
-# puts globMin(arr,index)
-# index = 1
-# puts globMin(arr,index)
-# index = 2
-# puts globMin(arr,index)
-# index = 3
-# puts globMin(arr,index)
-# index = 4
-# puts globMin(arr,index)
-# index = 5
-# puts globMin(arr,index)
-puts unigElemsAndCount(arr)
+puts "Какую задачу решать?
+
+1 - globMax
+2 - globMin
+3 - rotateLeftByOnePos
+4 - firstEvenAfterNotEven
+5 - unigElemsAndCount"
+n = gets.chomp.to_i
+case n
+when 1
+  puts "Введите индекс"
+  ind = gets.chomp.to_i
+  puts "Введённый индекс: #{ind}"
+  puts "Результат: #{globMax(arr, ind)}"
+when 2
+  puts "Введите индекс"
+  ind = gets.chomp.to_i
+  puts "Введённый индекс: #{ind}"
+  puts "Результат: #{globMin(arr, ind)}"
+when 3
+  puts "Результат: #{rotateLeftByOnePos(arr)}"
+when 4
+  puts "Результат: #{firstEvenAfterNotEven(arr)}"
+when 5
+  puts "Результат: #{unigElemsAndCount(arr)}"
+end
