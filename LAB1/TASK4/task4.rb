@@ -26,3 +26,31 @@ def globMax(arr, index)
   end
 end
 
+def globMin(arr, index)
+  if arr[index].nil? == true
+    return "такого индекса нет"
+  end
+  if arr[index + 1].nil? == false and arr[index - 1].nil? == false and arr[index] < arr[index + 1] and arr[index - 1] > arr[index]
+    return "да"
+  elsif arr[index + 1].nil? == true and arr[index - 1] > arr[index]
+    return "да"
+  elsif arr[index - 1].nil? == false and arr[index] < arr[index + 1]
+    return "да"
+  else
+    return "нет"
+  end
+end
+
+# arr = [4,6,1,7,3]
+# index = 0
+# puts globMin(arr,index)
+# index = 1
+# puts globMin(arr,index)
+# index = 2
+# puts globMin(arr,index)
+# index = 3
+# puts globMin(arr,index)
+# index = 4
+# puts globMin(arr,index)
+# index = 5
+# puts globMin(arr,index)
