@@ -1,4 +1,3 @@
-
 class Student
   attr_accessor :id, :last_name, :first_name, :patronymic, :phone, :telegram, :email, :github
 
@@ -11,5 +10,8 @@ class Student
     @telegram = telegram
     @email = email
     @github = github
+  end
+  def to_s
+    "ID: #{@id}\nФамилия: #{@last_name}\nИмя: #{@first_name}\nОтчество: #{@patronymic}\nТелефон: #{@phone}\nТелеграм: #{@telegram}\nПочта: #{@email}\nGitHub: #{@github}"
   end
 end
