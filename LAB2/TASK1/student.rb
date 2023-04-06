@@ -1,5 +1,5 @@
 class Student
-  attr_accessor :id, :last_name, :first_name, :patronymic, :phone, :telegram, :email, :github
+  attr_reader :id, :last_name, :first_name, :patronymic, :phone, :telegram, :email, :github
 
   PHONE_REGEX = /\A(\+7|8)\d{10}\z/
   TELEGRAM_REGEX = /^@[A-Za-z0-9\-_]+$/
@@ -10,7 +10,7 @@ class Student
     @last_name = last_name
     @first_name = first_name
     @patronymic = patronymic
-    @phone = phone
+    self.phone = phone
     @telegram = telegram
     @email = email
     @github = github
