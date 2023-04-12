@@ -11,32 +11,29 @@ class Student
     @first_name = first_name
     @patronymic = patronymic
     self.phone = phone
-    @telegram = telegram
-    @email = email
+    self.telegram = telegram
+    self.email = email
     @github = github
   end
 
   def phone=(value)
-    if value && !value.match(PHONE_REGEX)
-      raise ArgumentError.new("Неправильный формат номера телефона: #{value}")
-    end
+    raise ArgumentError, "Неправильный формат номера телефона: #{value}" if value && !value.match(PHONE_REGEX)
+
     @phone = value
   end
 
-
   def telegram=(value)
-    if value && !value.match(TELEGRAM_REGEX)
-      raise ArgumentError.new("Неправильный формат телеграма: #{value}")
-    end
+    raise ArgumentError, "Неправильный формат телеграма: #{value}" if value && !value.match(TELEGRAM_REGEX)
+
     @telegram = value
   end
 
   def email=(value)
-    if value && !value.match(EMAIL_REGEX)
-      raise ArgumentError.new("Неправильный формат почты: #{value}")
-    end
+    raise ArgumentError, "Неправильный формат почты: #{value}" if value && !value.match(EMAIL_REGEX)
+
     @email = value
   end
+
   def to_s
     "ID: #{@id}\nФамилия: #{@last_name}\nИмя: #{@first_name}\nОтчество: #{@patronymic}\nТелефон: #{@phone}\nТелеграм: #{@telegram}\nПочта: #{@email}\nGitHub: #{@github}"
   end
@@ -45,6 +42,7 @@ class Student
     return @contact = "phone=#{phone}" unless phone.nil?
     return @contact = "telegram=#{telegram}" unless telegram.nil?
     return @contact = "email=#{email}" unless email.nil?
+
     nil
   end
 
