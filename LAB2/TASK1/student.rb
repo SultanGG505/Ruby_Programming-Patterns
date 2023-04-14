@@ -87,4 +87,15 @@ class Student
     result
   end
 
+  def git?
+    !git.nil?
+  end
+
+  def contact?
+    !email.nil? || !phone.nil? || !telegram.nil?
+  end
+
+  def validate
+    git? && contact?
+  end
 end
