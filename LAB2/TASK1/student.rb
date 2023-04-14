@@ -3,6 +3,11 @@ class Student
   # стандартные геттеры и сеттеры для класса
   attr_accessor :id, :phone, :git, :telegram, :email, :last_name, :first_name, :paternal_name
 
+  #валидатор мобильного
+  def self.valid_phone?(phone)
+    phone.match(/^\+?[7,8] ?\(?\d{3}\)?-?\d{3}-?\d{2}-?\d{2}$/)
+  end
+
   # конструктор
   def initialize(last_name, first_name, paternal_name, options = {})
     self.last_name = last_name
@@ -15,6 +20,12 @@ class Student
     self.email = options[:email]
   end
 
+
+  def phone=(phone)
+    raise ArgumentError, "Incorrect value: phone=#{phone}!" if !phone.nil? && !Student.valid_phone?(phone)
+
+    @phone = phone
+  end
   def to_s
     result = "#{last_name} #{first_name} #{paternal_name}"
     result += " id=#{id}" unless id.nil?
