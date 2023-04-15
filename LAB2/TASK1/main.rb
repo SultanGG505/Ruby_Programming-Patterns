@@ -17,3 +17,4 @@ puts "Студент 4->", student4.to_s
 puts student4.validate
 student4.set_contacts(phone: '89184741586')
 puts "Студент 4->", student4.to_s
+puts "Студент 4->", student4.getInfo
