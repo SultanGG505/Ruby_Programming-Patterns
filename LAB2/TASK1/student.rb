@@ -1,94 +1,40 @@
-class Student
-  # стандартные геттеры и сеттеры для класса
-  attr_accessor :id
-  attr_reader :phone, :git, :telegram, :email, :last_name, :first_name, :paternal_name
+class Person
+  attr_reader :id, :last_name, :first_name, :paternal_name
 
-  #валидатор мобильного
-  def self.valid_phone?(phone)
-    phone.match(/^\+?[7,8] ?\(?\d{3}\)?-?\d{3}-?\d{2}-?\d{2}$/)
-  end
-
-  #валидатор имени
-  def self.valid_name?(name)
-    name.match(/^[А-Я][а-я]+$/)
-  end
-
-  #валидатор данных для аккаунта
-  def self.valid_account?(account)
-    account.match(/^@[A-Za-z0-9\-_]+$/)
-  end
-
-  #валидатор почты
-  def self.valid_email?(email)
-    email.match(/^[A-Za-z0-9\-_]+@[A-Za-z]+\.([A-Za-z]+\.)*[A-Za-z]+$/)
-  end
-
-  # конструктор
-  def initialize(last_name, first_name, paternal_name, options = {})
-    self.last_name = last_name
-    self.first_name = first_name
-    self.paternal_name = paternal_name
-    self.id = options[:id]
-    self.phone = options[:phone]
-    self.git = options[:git]
-    self.telegram = options[:telegram]
-    self.email = options[:email]
-  end
-
-  def phone=(phone)
-    raise ArgumentError, "Incorrect value: phone=#{phone}!" if !phone.nil? && !Student.valid_phone?(phone)
-
-    @phone = phone
-  end
-
-  def first_name=(first_name)
-    raise ArgumentError, "Incorrect value: first_name=#{first_name}!" if !first_name.nil? && !Student.valid_name?(first_name)
-
-    @first_name = first_name
-  end
-
-  def last_name=(last_name)
-    raise ArgumentError, "Incorrect value: last_name=#{last_name}!" if !last_name.nil? && !Student.valid_name?(last_name)
-
+  def initialize(id, last_name, first_name, paternal_name)
+    @id = id
     @last_name = last_name
-  end
-
-  def paternal_name=(paternal_name)
-    raise ArgumentError, "Incorrect value: paternal_name=#{paternal_name}!" if !paternal_name.nil? && !Student.valid_name?(paternal_name)
-
+    @first_name = first_name
     @paternal_name = paternal_name
   end
 
-  def git=(git)
-    raise ArgumentError, "Incorrect value: git=#{git}!" if !git.nil? && !Student.valid_account?(git)
+  def short_name
+    "#{last_name} #{first_name[0]}. #{paternal_name[0]}."
+  end
 
+  def to_s
+    "#{id}, #{last_name} #{first_name} #{paternal_name}"
+  end
+end
+
+class Student < Person
+  attr_reader :phone, :git, :telegram, :email
+
+  def initialize(id, last_name, first_name, paternal_name, phone: nil, git: nil, telegram: nil, email: nil)
+    super(id, last_name, first_name, paternal_name)
+    @phone = phone
     @git = git
-  end
-
-  def telegram=(telegram)
-    raise ArgumentError, "Incorrect value: telegram=#{telegram}!" if !telegram.nil? && !Student.valid_account?(telegram)
-
     @telegram = telegram
-  end
-
-  def email=(email)
-    raise ArgumentError, "Incorrect value: email=#{email}!" if !email.nil? && !Student.valid_email?(email)
-
     @email = email
   end
 
   def to_s
-    result = "#{last_name} #{first_name} #{paternal_name}"
-    result += " id=#{id}" unless id.nil?
+    result = super
     result += " phone=#{phone}" unless phone.nil?
     result += " git=#{git}" unless git.nil?
     result += " telegram=#{telegram}" unless telegram.nil?
     result += " email=#{email}" unless email.nil?
     result
-  end
-
-  def short_name
-    "#{last_name} #{first_name[0]}. #{paternal_name[0]}."
   end
 
   def contact
@@ -104,6 +50,9 @@ class Student
     "#{short_name}, #{contact}"
   end
 
+  def validate
+    git? && contact?
+  end
 
   def git?
     !git.nil?
@@ -119,7 +68,29 @@ class Student
     self.email = contacts[:email] if contacts.key?(:email)
   end
 
-  def validate
-    git? && contact?
+  private
+
+  attr_writer :phone, :git, :telegram, :email
+end
+
+class StudentShort < Person
+  attr_reader :git, :contact
+
+  def initialize(id, name_string, git: nil, contact: nil)
+    last_name, first_name, paternal_name = name_string.split(" ")
+    super(id, last_name, first_name, paternal_name)
+    @git = git
+    @contact = contact
+  end
+
+  def to_s
+    result = super
+    result += " git=#{git}" unless git.nil?
+    result += " contact=#{contact}" unless contact.nil?
+    result
+  end
+
+  def getInfo
+    "#{short_name}, #{contact}"
   end
 end
