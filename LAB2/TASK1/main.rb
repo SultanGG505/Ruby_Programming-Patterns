@@ -1,3 +1,5 @@
+require_relative 'person.rb'
+require_relative 'student_short.rb'
 require_relative 'student.rb'
 
 # # Создаем несколько объектов класса Student
