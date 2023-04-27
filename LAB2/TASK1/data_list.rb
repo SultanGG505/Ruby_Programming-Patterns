@@ -1,39 +1,16 @@
-class Data_list
+class Data_List
+  attr_reader :data, :selected
 
-  def initialize(list:)
-    self.list = list
+  def initialize(data)
+    @data = data
+    @selected = []
   end
 
   def select(number)
-    raise ArgumentError 'number bigger than list size' if number>=list.size
-    selectd.push(number)
+    @selected << number unless @selected.include?(number)
   end
 
   def get_selected
-    list.select {|elem| selected.include?(elem)}
-  end
-
-  def get_names
-    raise NotImplementedError
-  end
-
-  def get_data
-    raise NotImplementedError
-  end
-
-  private
-  def list
-    @list
-  end
-  def list=(list)
-    @list = list
-  end
-  def selected
-    @selectd
-  end
-
-  def selected=(sel)
-    @selected = sel
+    @selected
   end
 end
-
