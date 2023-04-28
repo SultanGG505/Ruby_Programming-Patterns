@@ -31,14 +31,14 @@ class DataTable
 
 end
 
-table = DataTable.new([
-                        [7, 2, 0],
-                        [5, 1, 4],
-                        [9, 5, 5]
-                      ])
-
-puts table.get_element(0, 2)
-puts table.to_s
-puts table.cols_count
-puts table.rows_count
+# table = DataTable.new([
+#                         [7, 2, 0],
+#                         [5, 1, 4],
+#                         [9, 5, 5]
+#                       ])
+#
+# puts table.get_element(0, 2)
+# puts table.to_s
+# puts table.cols_count
+# puts table.rows_count
 

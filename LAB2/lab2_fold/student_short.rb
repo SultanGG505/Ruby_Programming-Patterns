@@ -1,13 +1,23 @@
 class StudentShort
   # стандартные геттеры и сеттеры для класса
-  attr_reader :id, :git, :contact, :last_name, :initials
+  attr_accessor :id, :git, :contact, :last_name, :initials
   #конструктор, принимающий аргументы класса student
-  def initialize(student)
-    @id = student.id
-    @last_name = student.last_name
-    @initials = "#{student.first_name[0]}. #{student.paternal_name[0]}."
-    @git = student.git unless student.git.nil?
-    @contact = student.contact
+  # def initialize(student)
+  #   @id = student.id
+  #   @last_name = student.last_name
+  #   @initials = "#{student.first_name[0]}. #{student.paternal_name[0]}."
+  #   @git = student.git unless student.git.nil?
+  #   @contact = student.contact
+  # end
+
+
+  def initialize(last_name, id: nil, git: nil, contact: nil, initials:nil )
+    self.last_name = last_name
+    self.id = id
+    self.git = git
+    self.contact = contact
+    self.initials = initials
+
   end
 
   #фамилия и инициалы
