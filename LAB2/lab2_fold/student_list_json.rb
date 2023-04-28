@@ -12,6 +12,5 @@ class StudentListJSON < StudentListBase
   def list_to_str(list)
     JSON.generate(list)
   end
-end
-
+end# frozen_string_literal: true
 
