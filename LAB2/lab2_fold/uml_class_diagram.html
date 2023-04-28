@@ -61,8 +61,8 @@
   self.valid_name?(name); self.valid_phone?(phone); self.valid_account?(account); self.valid_email?(email)
 ]
 [<class> StudentShort |
-  @id; @last_name; @initials; @contact |
-  +initialize(student); +last_name_and_initials; +to_s; +git?; +contact?; +validate |
+   |
+  +initialize(last_name, id, git, contact, initials); +last_name_and_initials; +to_s; +git?; +contact?; +validate |
   
 ]
 [DataListStudentShort] inherits <:- [DataList]
