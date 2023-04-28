@@ -30,6 +30,31 @@
 
 #.class: fill=#FEDCC4 title=bold
 #.module: fill=#D9E6FF title=bold
+[<class> DataList |
+   |
+  +initialize(objects); +select(number); +get_selected; +get_data; +table_fields(object) |
+  
+]
+[<class> DataListStudentShort |
+   |
+  +get_names; +get_data; #table_fields(object) |
+  
+]
+[<class> DataTable |
+   |
+  +initialize(table); +get_element(row, col); +to_s |
+  
+]
+[<class> OrderProcessor |
+   |
+  +process_order; +select_products; +calculate_total_price; +create_invoice; +send_confirmation_email |
+  
+]
+[<class> OnlineOrderProcessor |
+   |
+  +select_products; +calculate_total_price |
+  
+]
 [<class> Student |
    |
   +initialize(last_name, first_name, paternal_name, id, git, phone, email, telegram); +phone=(phone); +first_name=(first_name); +last_name=(last_name); +paternal_name=(paternal_name); +git=(git); +telegram=(telegram); +email=(email); +last_name_and_initials; +contact; +short_info; +set_contacts(contacts); +to_s |
@@ -40,6 +65,8 @@
   +initialize(student); +last_name_and_initials; +to_s; +git?; +contact?; +validate |
   
 ]
+[DataListStudentShort] inherits <:- [DataList]
+[OnlineOrderProcessor] inherits <:- [OrderProcessor]
 [Student] inherits <:- [StudentShort]
 `;
       nomnoml.draw(canvas, source);
