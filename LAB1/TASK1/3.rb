@@ -7,7 +7,7 @@ Open3.pipeline(cmd)
 
 puts "Теперь введите некоторый код на Ruby для выполнения самой же Ruby"
 rubyCmd = gets.chomp()
-File.open("LAB1/TASK1/code.rb","w") do |file|
+File.open("LAB1/lab2_fold/code.rb","w") do |file|
     file.write(rubyCmd)
 end
 
