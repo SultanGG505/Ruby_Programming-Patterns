@@ -1,9 +1,41 @@
+class DataList
 
-class Data_list
-  def initialize(list:)
-    self.list = list
+  private_class_method :new
+
+  def initialize(objects)
+    self.objects_list = objects
+    self.selected_objects = []
   end
-  def some_method
-    raise NotImplementedError
+
+  def select(number)
+    selected_objects.append(number)
   end
+
+  def clear_select
+    self.selected_objects = []
+  end
+
+  def get_selected
+    return [] if selected_objects.empty?
+
+    selected_id_list = []
+    selected_objects.each do |num|
+      selected_id_list.append(objects_list[num].id)
+    end
+    selected_id_list
+  end
+
+  protected
+
+  def get_names;
+    raise NotImplementedError, "Необходима реализация в классе-наследнике"
+  end
+
+  def get_data;
+    raise NotImplementedError, "Необходима реализация в классе-наследнике"
+  end
+
+  private
+
+  attr_accessor :selected_objects, :objects_list
 end
