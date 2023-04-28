@@ -1,6 +1,7 @@
 class DataList
 
   private_class_method :new
+  attr_writer :objects_list
 
   def initialize(objects)
     self.objects_list = objects
@@ -25,17 +26,31 @@ class DataList
     selected_id_list
   end
 
-  protected
-
-  def get_names;
-    raise NotImplementedError, "Необходима реализация в классе-наследнике"
+  # применение паттерна
+  def get_data
+    result = []
+    id = 0
+    objects_list.each do |obj|
+      row = []
+      row << id
+      row.push(*table_fields(obj))
+      result << row
+      id += 1
+    end
+    DataTable.new(result)
   end
 
-  def get_data;
-    raise NotImplementedError, "Необходима реализация в классе-наследнике"
+  protected
+
+  def get_names; end
+
+  # данный метод необходимо переопределять у наследников
+  def table_fields(object)
+    []
   end
 
   private
 
-  attr_accessor :selected_objects, :objects_list
+  attr_reader :objects_list
+  attr_accessor :selected_objects
 end
