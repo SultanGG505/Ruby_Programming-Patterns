@@ -55,10 +55,45 @@
   +select_products; +calculate_total_price |
   
 ]
+[<class> Strategy |
+   |
+  +execute(a, b) |
+  
+]
+[<class> AdditionStrategy |
+   |
+  +execute(a, b) |
+  
+]
+[<class> MultiplicationStrategy |
+   |
+  +execute(a, b) |
+  
+]
+[<class> Context |
+  @strategy |
+  +initialize(strategy); +execute_strategy(a, b) |
+  
+]
 [<class> Student |
    |
   +initialize(last_name, first_name, paternal_name, id, git, phone, email, telegram); +phone=(phone); +first_name=(first_name); +last_name=(last_name); +paternal_name=(paternal_name); +git=(git); +telegram=(telegram); +email=(email); +last_name_and_initials; +contact; +short_info; +set_contacts(contacts); +to_s |
   self.valid_name?(name); self.valid_phone?(phone); self.valid_account?(account); self.valid_email?(email)
+]
+[<class> StudentListBase |
+   |
+  +initialize; +read_from_file(file_path); +write_to_file(file_path); +student_by_id(student_id); +get_k_n_student_short_list(page, count, current_data_list); +sorted; +add_student(student); +replace_student(student_id, student); +remove_student(student_id); +student_count; +student_by_name(student_name); #str_to_list(str); #list_to_str(list); -update_cur_id |
+  
+]
+[<class> StudentListJSON |
+   |
+  #str_to_list(str); #list_to_str(list) |
+  
+]
+[<class> StudentListYAML |
+   |
+  #str_to_list(str); #list_to_str(list) |
+  
 ]
 [<class> StudentShort |
    |
@@ -67,7 +102,11 @@
 ]
 [DataListStudentShort] inherits <:- [DataList]
 [OnlineOrderProcessor] inherits <:- [OrderProcessor]
+[AdditionStrategy] inherits <:- [Strategy]
+[MultiplicationStrategy] inherits <:- [Strategy]
 [Student] inherits <:- [StudentShort]
+[StudentListJSON] inherits <:- [StudentListBase]
+[StudentListYAML] inherits <:- [StudentListBase]
 `;
       nomnoml.draw(canvas, source);
   </script>
