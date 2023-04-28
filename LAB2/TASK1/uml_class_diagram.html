@@ -30,23 +30,17 @@
 
 #.class: fill=#FEDCC4 title=bold
 #.module: fill=#D9E6FF title=bold
-[<class> Person |
-  @id; @last_name; @first_name; @paternal_name |
-  +initialize(id, last_name, first_name, paternal_name); +short_name; +to_s |
-  
-]
 [<class> Student |
-  @phone; @git; @telegram; @email |
-  +initialize(id, last_name, first_name, paternal_name, phone, git, telegram, email); +to_s; +contact; +getInfo; +validate; +git?; +contact?; +set_contacts(contacts) |
-  
+   |
+  +initialize(last_name, first_name, paternal_name, id, git, phone, email, telegram); +phone=(phone); +first_name=(first_name); +last_name=(last_name); +paternal_name=(paternal_name); +git=(git); +telegram=(telegram); +email=(email); +last_name_and_initials; +contact; +short_info; +set_contacts(contacts); +to_s |
+  self.valid_name?(name); self.valid_phone?(phone); self.valid_account?(account); self.valid_email?(email)
 ]
 [<class> StudentShort |
-  @git; @contact |
-  +initialize(id, name_string, git, contact); +to_s; +getInfo |
+  @id; @last_name; @initials; @contact |
+  +initialize(student); +last_name_and_initials; +to_s; +git?; +contact?; +validate |
   
 ]
-[Student] inherits <:- [Person]
-[StudentShort] inherits <:- [Person]
+[Student] inherits <:- [StudentShort]
 `;
       nomnoml.draw(canvas, source);
   </script>
