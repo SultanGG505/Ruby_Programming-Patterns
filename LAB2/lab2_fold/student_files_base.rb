@@ -1,15 +1,17 @@
 class StudentListBase
-  private_class_method :new
+
+  attr_writer :data_type
 
   # конструктор
-  def initialize
+  def initialize(data_type)
     self.students = []
     self.cur_id = 1
+    self.data_type = data_type
   end
 
   # чтение из файла
   def read_from_file(file_path)
-    list = str_to_list(File.read(file_path))
+    list = data_type.str_to_list(File.read(file_path))
     self.students = list.map { |h| Student.from_hash(h) }
     update_cur_id
   end
@@ -17,7 +19,7 @@ class StudentListBase
   # запись в файл
   def write_to_file(file_path)
     list = students.map(&:to_hash)
-    File.write(file_path, list_to_str(list))
+    File.write(file_path, data_type.list_to_str(list))
   end
 
   # найти студента по айди
@@ -26,7 +28,7 @@ class StudentListBase
   end
 
   # Получить список k по счету n  объектов класса Student_short
-  def get_k_n_student_short_list(page, count, current_data_list: nil)
+  def get_k_n_student_short_list(page, count, current_data_list)
     offset = (page - 1) * count # сдвиг элементов массива
     slice = students[offset, count].map { |s| StudentShort.new(s) }
 
@@ -49,7 +51,7 @@ class StudentListBase
 
   # заменить студента
   def replace_student(student_id, student)
-    idx = student.find_index { |s| s.id == student_id }
+    idx = students.find_index { |s| s.id == student_id }
     students[idx] = student
   end
   #удалили студента((
@@ -72,18 +74,14 @@ class StudentListBase
 
   protected
 
-  # паттерн паттерн
-  def str_to_list(str); end
-
-  def list_to_str(list); end
+  attr_accessor :students, :cur_id
 
   private
+  attr_reader :data_type
 
   # Метод для обновлении информации в cur_id
   def update_cur_id
-    self.cur_id = students.max_by(&:id).id + 1
+    self.cur_id = students.max_by(&:id).id.to_i + 1
   end
+end
 
-
-  attr_accessor :students, :cur_id
-end# frozen_string_literal: true
