@@ -82,10 +82,15 @@
 ]
 [<class> StudentListBase |
    |
-  +initialize; +read_from_file(file_path); +write_to_file(file_path); +student_by_id(student_id); +get_k_n_student_short_list(page, count, current_data_list); +sorted; +add_student(student); +replace_student(student_id, student); +remove_student(student_id); +student_count; +student_by_name(student_name); #str_to_list(str); #list_to_str(list); -update_cur_id |
+  +initialize(data_type); +read_from_file(file_path); +write_to_file(file_path); +student_by_id(student_id); +get_k_n_student_short_list(page, count, current_data_list); +sorted; +add_student(student); +replace_student(student_id, student); +remove_student(student_id); +student_count; +student_by_name(student_name); -update_cur_id |
   
 ]
 [<class> StudentListJSON |
+   |
+  #str_to_list(str); #list_to_str(list) |
+  
+]
+[<class> StudentListStrategy |
    |
   #str_to_list(str); #list_to_str(list) |
   
@@ -105,8 +110,8 @@
 [AdditionStrategy] inherits <:- [Strategy]
 [MultiplicationStrategy] inherits <:- [Strategy]
 [Student] inherits <:- [StudentShort]
-[StudentListJSON] inherits <:- [StudentListBase]
-[StudentListYAML] inherits <:- [StudentListBase]
+[StudentListJSON] inherits <:- [StudentListStrategy]
+[StudentListYAML] inherits <:- [StudentListStrategy]
 `;
       nomnoml.draw(canvas, source);
   </script>
