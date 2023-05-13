@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>QA - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/navigation.js" defer></script>
+<script src="../js/search.js" defer></script>
+<script src="../js/search_index.js" defer></script>
+<script src="../js/searcher.js" defer></script>
+<script src="../js/darkfish.js" defer></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    
+<div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+    <li><a href="../Gemfile.html">Gemfile</a>
+    <li><a href="../Gemfile_lock.html">Gemfile.lock</a>
+    <li><a href="../LAB1/TASK3/array_txt.html">array</a>
+    <li><details><summary>LAB2</summary>
+    <ul class="link-list">
+      <li><a href="../LAB2/lab2_fold/qa_txt.html">qa</a>
+      <li><a href="../LAB2/lab2_fold/uml_class_diagram_html.html">uml_class_diagram.html</a>
+    </ul></details>
+    <li><details open><summary>LabStudents</summary>
+    <ul class="link-list">
+      <li><a href="../LabStudents/QA_txt.html">QA</a>
+      <li><a href="../LabStudents/db_config/config_example_yaml.html">config.example.yaml</a>
+      <li><a href="../LabStudents/db_config/config_yaml.html">config.yaml</a>
+      <li><a href="../LabStudents/db_config/migrations/001_create_table_student_sql.html">001_create_table_student.sql</a>
+      <li><a href="../LabStudents/db_config/mock_data/fill_student_sql.html">fill_student.sql</a>
+      <li><a href="../LabStudents/test_data/students_json.html">students.json</a>
+      <li><a href="../LabStudents/test_data/students_yaml.html">students.yaml</a>
+    </ul></details>
+    <li><a href="../main_sql.html">main.sql</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page LabStudents/QA.txt">
+
+<p>a. Какой класс отвечает за работу с MySQL? Как осуществляется работа? b. В каком формате объект указанного Вами класса возвращает результат SQL запроса Select? c. Опишите структуру и основные принципы коллекцией ХЕШ. d. Опишите структуру и основные принципы коллекцией множество. e. Опишите проблему и место паттерна одиночка в разработке. f. Напишите на бумаге пример реализации данного паттерна и способ проверки корректности его работы. g. Попытайтесь снова сформулировать ответ на вопрос – В чем необходимость использования полей и методов класса? h. Что такое метод класса, в чем его отличие от метода объекта? Приведите два практических примера, когда введение метода класса вы считаете необходимым согласно концепциям ООП.</p>
+
+<p>ОТВЕТЫ———————————————————</p>
+<ol style="list-style-type: lower-alpha"><li>
+<p>В Ruby коллекция хэшей - это структура данных, в которой хранятся</p>
+</li></ol>
+
+<p>пары ключ-значение. Основными принципами работы с хэшем являются:</p>
+
+<p>Создайте новый хэш, используя синтаксис {} или Hash.new Храните значения, используя синтаксис <a href="key">hash</a> = value Извлекайте значения, используя синтаксис <a href="key">hash</a> Перебирайте ключи и значения, используя метод each Проверить наличие ключа с помощью has_key? или включить? методы Удалите ключи и значения, используя метод удаления</p>
+<ol style="list-style-type: lower-alpha"><li>
+<p>Коллекция Set - это структура данных, в которой хранятся уникальные элементы</p>
+</li></ol>
+
+<p>без какого-либо определенного порядка. Основными принципами работы с набором являются:</p>
+
+<p>Создайте новый набор, используя метод Set.new Добавьте элементы в набор, используя методы add или &lt;&lt; Удалите элементы из набора с помощью метода delete Проверить наличие элемента с помощью include? метод Перебирайте элементы, используя метод each Выполните операции набора, такие как объединение, пересечение и разность, используя соответствующие методы</p>
+<ol style="list-style-type: lower-alpha"><li>
+<p>Поля и методы класса используются в Ruby для хранения данных и выполнения действий,</p>
+</li></ol>
+
+<p>которые относятся к классу в целом, а не к конкретному экземпляру класса. Они могут быть полезны для управления общими ресурсами или предоставления служебных методов, которые не зависят от состояния отдельного объекта.</p>
+
+<p>h.</p>
+
+<p>Метод класса - это метод, который привязан к самому классу, а не к его экземплярам. Метод объекта - это метод, который привязан к конкретному экземпляру класса. Отличие метода класса от метода объекта заключается в том,</p>
+
+<pre>что метод класса может вызываться непосредственно из класса,
+без создания экземпляра класса, тогда как метод объекта может вызываться только из конкретного экземпляра класса.</pre>
+
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.5.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

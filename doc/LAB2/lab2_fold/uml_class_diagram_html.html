@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>uml_class_diagram.html - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+  var index_rel_prefix = "../../";
+</script>
+
+<script src="../../js/navigation.js" defer></script>
+<script src="../../js/search.js" defer></script>
+<script src="../../js/search_index.js" defer></script>
+<script src="../../js/searcher.js" defer></script>
+<script src="../../js/darkfish.js" defer></script>
+
+<link href="../../css/fonts.css" rel="stylesheet">
+<link href="../../css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    
+<div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+    <li><a href="../../Gemfile.html">Gemfile</a>
+    <li><a href="../../Gemfile_lock.html">Gemfile.lock</a>
+    <li><a href="../../LAB1/TASK3/array_txt.html">array</a>
+    <li><details open><summary>LAB2</summary>
+    <ul class="link-list">
+      <li><a href="../../LAB2/lab2_fold/qa_txt.html">qa</a>
+      <li><a href="../../LAB2/lab2_fold/uml_class_diagram_html.html">uml_class_diagram.html</a>
+    </ul></details>
+    <li><details><summary>LabStudents</summary>
+    <ul class="link-list">
+      <li><a href="../../LabStudents/QA_txt.html">QA</a>
+      <li><a href="../../LabStudents/db_config/config_example_yaml.html">config.example.yaml</a>
+      <li><a href="../../LabStudents/db_config/config_yaml.html">config.yaml</a>
+      <li><a href="../../LabStudents/db_config/migrations/001_create_table_student_sql.html">001_create_table_student.sql</a>
+      <li><a href="../../LabStudents/db_config/mock_data/fill_student_sql.html">fill_student.sql</a>
+      <li><a href="../../LabStudents/test_data/students_json.html">students.json</a>
+      <li><a href="../../LabStudents/test_data/students_yaml.html">students.yaml</a>
+    </ul></details>
+    <li><a href="../../main_sql.html">main.sql</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page LAB2/lab2_fold/uml_class_diagram.html">
+
+<p>&lt;!DOCTYPE html&gt; &lt;html lang=“en”&gt; &lt;head&gt;</p>
+
+<pre>&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;title&gt;Diagram&lt;/title&gt;</pre>
+
+<p>&lt;/head&gt; &lt;body&gt;</p>
+
+<pre>&lt;script src=&quot;https://unpkg.com/graphre/dist/graphre.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/nomnoml/dist/nomnoml.js&quot;&gt;&lt;/script&gt;
+
+&lt;canvas id=&quot;target-canvas&quot;&gt;&lt;/canvas&gt;
+&lt;script&gt;
+    var canvas = document.getElementById(&#39;target-canvas&#39;);
+    var source = `#direction: right</pre>
+
+<p>zoom: 0.9</p>
+
+<p>font: Roboto fontSize: 20 leading: 2 padding: 12</p>
+
+<p>fillArrows: true arrowSize: 0.5 spacing: 130</p>
+
+<p>lineWidth: 1.5 stroke: #33322E</p>
+
+<p>#.class: fill=#FEDCC4 title=bold #.module: fill=#D9E6FF title=bold [&lt;class&gt; <a href="../../DataList.html"><code>DataList</code></a> |</p>
+
+<pre> |
++initialize(objects); +select(number); +get_selected; +get_data; +table_fields(object) |</pre>
+
+<p>] [&lt;class&gt; <a href="../../DataListStudentShort.html"><code>DataListStudentShort</code></a> |</p>
+
+<pre> |
++get_names; +get_data; #table_fields(object) |</pre>
+
+<p>] [&lt;class&gt; <a href="../../DataTable.html"><code>DataTable</code></a> |</p>
+
+<pre> |
++initialize(table); +get_element(row, col); +to_s |</pre>
+
+<p>] [&lt;class&gt; <a href="../../OrderProcessor.html"><code>OrderProcessor</code></a> |</p>
+
+<pre> |
++process_order; +select_products; +calculate_total_price; +create_invoice; +send_confirmation_email |</pre>
+
+<p>] [&lt;class&gt; <a href="../../OnlineOrderProcessor.html"><code>OnlineOrderProcessor</code></a> |</p>
+
+<pre> |
++select_products; +calculate_total_price |</pre>
+
+<p>] [&lt;class&gt; <a href="../../Strategy.html"><code>Strategy</code></a> |</p>
+
+<pre> |
++execute(a, b) |</pre>
+
+<p>] [&lt;class&gt; <a href="../../AdditionStrategy.html"><code>AdditionStrategy</code></a> |</p>
+
+<pre> |
++execute(a, b) |</pre>
+
+<p>] [&lt;class&gt; <a href="../../MultiplicationStrategy.html"><code>MultiplicationStrategy</code></a> |</p>
+
+<pre> |
++execute(a, b) |</pre>
+
+<p>] [&lt;class&gt; <a href="../../Context.html"><code>Context</code></a> |</p>
+
+<pre>@strategy |
++initialize(strategy); +execute_strategy(a, b) |</pre>
+
+<p>] [&lt;class&gt; <a href="../../Student.html"><code>Student</code></a> |</p>
+
+<pre> |
++initialize(last_name, first_name, paternal_name, id, git, phone, email, telegram); +phone=(phone); +first_name=(first_name); +last_name=(last_name); +paternal_name=(paternal_name); +git=(git); +telegram=(telegram); +email=(email); +last_name_and_initials; +contact; +short_info; +set_contacts(contacts); +to_s |
+self.valid_name?(name); self.valid_phone?(phone); self.valid_account?(account); self.valid_email?(email)</pre>
+
+<p>] [&lt;class&gt; <a href="../../StudentListBase.html"><code>StudentListBase</code></a> |</p>
+
+<pre> |
++initialize(data_type); +read_from_file(file_path); +write_to_file(file_path); +student_by_id(student_id); +get_k_n_student_short_list(page, count, current_data_list); +sorted; +add_student(student); +replace_student(student_id, student); +remove_student(student_id); +student_count; +student_by_name(student_name); -update_cur_id |</pre>
+
+<p>] [&lt;class&gt; <a href="../../StudentListJSON.html"><code>StudentListJSON</code></a> |</p>
+
+<pre> |
+#str_to_list(str); #list_to_str(list) |</pre>
+
+<p>] [&lt;class&gt; <a href="../../StudentListStrategy.html"><code>StudentListStrategy</code></a> |</p>
+
+<pre> |
+#str_to_list(str); #list_to_str(list) |</pre>
+
+<p>] [&lt;class&gt; <a href="../../StudentListYAML.html"><code>StudentListYAML</code></a> |</p>
+
+<pre> |
+#str_to_list(str); #list_to_str(list) |</pre>
+
+<p>] [&lt;class&gt; <a href="../../StudentShort.html"><code>StudentShort</code></a> |</p>
+
+<pre> |
++initialize(last_name, id, git, contact, initials); +last_name_and_initials; +to_s; +git?; +contact?; +validate |</pre>
+
+<p>]</p>
+<dl class="rdoc-list label-list"><dt><a href="../../DataListStudentShort.html"><code>DataListStudentShort</code></a>
+<dd>
+<p>inherits &lt;:- [DataList]</p>
+</dd><dt><a href="../../OnlineOrderProcessor.html"><code>OnlineOrderProcessor</code></a>
+<dd>
+<p>inherits &lt;:- [OrderProcessor]</p>
+</dd><dt><a href="../../AdditionStrategy.html"><code>AdditionStrategy</code></a>
+<dd>
+<p>inherits &lt;:- [Strategy]</p>
+</dd><dt><a href="../../MultiplicationStrategy.html"><code>MultiplicationStrategy</code></a>
+<dd>
+<p>inherits &lt;:- [Strategy]</p>
+</dd><dt><a href="../../Student.html"><code>Student</code></a>
+<dd>
+<p>inherits &lt;:- [StudentShort]</p>
+</dd><dt><a href="../../StudentListJSON.html"><code>StudentListJSON</code></a>
+<dd>
+<p>inherits &lt;:- [StudentListStrategy]</p>
+</dd><dt><a href="../../StudentListYAML.html"><code>StudentListYAML</code></a>
+<dd>
+<p>inherits &lt;:- [StudentListStrategy]</p>
+</dd></dl>
+
+<p>‘;</p>
+
+<pre>    nomnoml.draw(canvas, source);
+&lt;/script&gt;</pre>
+
+<p>&lt;/body&gt; &lt;/html&gt;</p>
+
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.5.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Object - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+<div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  <p class="link">BasicObject
+</div>
+
+    
+    
+    
+<!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    <li ><a href="#method-i-firstEvenAfterNotEven">#firstEvenAfterNotEven</a>
+    <li ><a href="#method-i-firstPositiv">#firstPositiv</a>
+    <li ><a href="#method-i-globMax">#globMax</a>
+    <li ><a href="#method-i-globMin">#globMin</a>
+    <li ><a href="#method-i-maxAndSimpleDel_Task">#maxAndSimpleDel_Task</a>
+    <li ><a href="#method-i-minArr">#minArr</a>
+    <li ><a href="#method-i-multOfNotDivisibleByFive">#multOfNotDivisibleByFive</a>
+    <li ><a href="#method-i-nod_Task">#nod_Task</a>
+    <li ><a href="#method-i-rotateLeftByOnePos">#rotateLeftByOnePos</a>
+    <li ><a href="#method-i-simple">#simple</a>
+    <li ><a href="#method-i-unigElemsAndCount">#unigElemsAndCount</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Object">
+  <h1 id="class-Object" class="class">
+    class Object
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  <section id="5Buntitled-5D" class="documentation-section">
+
+
+
+
+
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+      <div id="method-i-firstEvenAfterNotEven" class="method-detail ">
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">firstEvenAfterNotEven</span><span
+              class="method-args">(arr)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="firstEvenAfterNotEven-source">
+            <pre><span class="ruby-comment"># File LAB1/TASK4/task4.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">firstEvenAfterNotEven</span>(<span class="ruby-identifier">arr</span>)
+  <span class="ruby-comment"># odd нечётный</span>
+  <span class="ruby-comment"># arr.filter.with_index { |x,i| i.odd? }</span>
+  <span class="ruby-comment"># arr.filter.with_index { |x,i| !i.odd? }</span>
+  <span class="ruby-identifier">arr</span>.<span class="ruby-identifier">partition</span>.<span class="ruby-identifier">with_index</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">i</span>.<span class="ruby-identifier">even?</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-firstPositiv" class="method-detail ">
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">firstPositiv</span><span
+              class="method-args">(arr)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="firstPositiv-source">
+            <pre><span class="ruby-comment"># File LAB1/TASK3/1.rb, line 6</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">firstPositiv</span>(<span class="ruby-identifier">arr</span>)
+    <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">arr</span>.<span class="ruby-identifier">length</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">arr</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">to_i</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-value">-1</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-globMax" class="method-detail ">
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">globMax</span><span
+              class="method-args">(arr, index)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+        </div>
+
+        <div class="method-description">
+          <p>1.51. Для введенного списка построить два списка L1 и L2, где элементы L1 это неповторяющиеся элементы исходного списка, а элемент списка L2 с номером i показывает, сколько раз элемент списка L1 с таким номером повторяется в исходном.</p>
+
+          <div class="method-source-code" id="globMax-source">
+            <pre><span class="ruby-comment"># File LAB1/TASK4/task4.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">globMax</span>(<span class="ruby-identifier">arr</span>, <span class="ruby-identifier">index</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">arr</span>[<span class="ruby-identifier">index</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">arr</span>.<span class="ruby-identifier">max</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;да&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;нет&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-globMin" class="method-detail ">
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">globMin</span><span
+              class="method-args">(arr, index)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="globMin-source">
+            <pre><span class="ruby-comment"># File LAB1/TASK4/task4.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">globMin</span>(<span class="ruby-identifier">arr</span>, <span class="ruby-identifier">index</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">arr</span>[<span class="ruby-identifier">index</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;такого индекса нет&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">arr</span>[<span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">arr</span>[<span class="ruby-identifier">index</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">arr</span>[<span class="ruby-identifier">index</span>] <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">arr</span>[<span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>] <span class="ruby-keyword">and</span> <span class="ruby-identifier">arr</span>[<span class="ruby-identifier">index</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>] <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">arr</span>[<span class="ruby-identifier">index</span>]
+    <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;да&quot;</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">arr</span>[<span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">arr</span>[<span class="ruby-identifier">index</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>] <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">arr</span>[<span class="ruby-identifier">index</span>]
+    <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;да&quot;</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">arr</span>[<span class="ruby-identifier">index</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">arr</span>[<span class="ruby-identifier">index</span>] <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">arr</span>[<span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>]
+    <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;да&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;нет&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-maxAndSimpleDel_Task" class="method-detail ">
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">maxAndSimpleDel_Task</span><span
+              class="method-args">(num)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+        </div>
+
+        <div class="method-description">
+          <p>метод 1, найти максимальный простой делитель числа</p>
+
+          <div class="method-source-code" id="maxAndSimpleDel_Task-source">
+            <pre><span class="ruby-comment"># File LAB1/TASK2/methods.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">maxAndSimpleDel_Task</span>(<span class="ruby-identifier">num</span>)
+    <span class="ruby-identifier">res</span> = <span class="ruby-value">-1</span>
+    <span class="ruby-identifier">num</span>.<span class="ruby-identifier">downto</span>(<span class="ruby-value">1</span>).<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">div</span><span class="ruby-operator">|</span> <span class="ruby-identifier">res</span> = <span class="ruby-identifier">div</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">simple</span>(<span class="ruby-identifier">div</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">div</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">res</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">num</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">div</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>}
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">res</span> <span class="ruby-operator">==</span> <span class="ruby-value">-1</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;у числа нет делителя&quot;</span>
+    <span class="ruby-keyword">else</span> 
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">res</span>
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-minArr" class="method-detail ">
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">minArr</span><span
+              class="method-args">(arr)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="minArr-source">
+            <pre><span class="ruby-comment"># File LAB1/TASK3/1.rb, line 1</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">minArr</span>(<span class="ruby-identifier">arr</span>)
+    <span class="ruby-identifier">min</span> = <span class="ruby-identifier">arr</span>.<span class="ruby-identifier">min</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">min</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-multOfNotDivisibleByFive" class="method-detail ">
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">multOfNotDivisibleByFive</span><span
+              class="method-args">(num)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+        </div>
+
+        <div class="method-description">
+          <p>метод 2, найти произведение цифр числа, не делящихся на 5</p>
+
+          <div class="method-source-code" id="multOfNotDivisibleByFive-source">
+            <pre><span class="ruby-comment"># File LAB1/TASK2/methods.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">multOfNotDivisibleByFive</span>(<span class="ruby-identifier">num</span>)
+    <span class="ruby-identifier">res</span>, <span class="ruby-identifier">count</span> = <span class="ruby-value">1</span>, <span class="ruby-value">0</span>
+    <span class="ruby-identifier">num</span>.<span class="ruby-identifier">digits</span>.<span class="ruby-identifier">each</span> { 
+        <span class="ruby-operator">|</span><span class="ruby-identifier">dig</span><span class="ruby-operator">|</span> 
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">dig</span> <span class="ruby-operator">%</span> <span class="ruby-value">5</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>
+            <span class="ruby-identifier">res</span> <span class="ruby-operator">*=</span> <span class="ruby-identifier">dig</span> 
+            <span class="ruby-identifier">count</span><span class="ruby-operator">+=</span><span class="ruby-value">1</span> 
+        <span class="ruby-keyword">end</span>
+    }
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">count</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;у числа нет подходящих цифр&quot;</span>
+    <span class="ruby-keyword">else</span> 
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">res</span>
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-nod_Task" class="method-detail ">
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">nod_Task</span><span
+              class="method-args">(num)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="nod_Task-source">
+            <pre><span class="ruby-comment"># File LAB1/TASK2/methods.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">nod_Task</span>(<span class="ruby-identifier">num</span>)
+    <span class="ruby-identifier">maxDel</span> = <span class="ruby-value">-1</span>
+    <span class="ruby-identifier">mult</span> = <span class="ruby-value">1</span>
+    <span class="ruby-identifier">num</span>.<span class="ruby-identifier">downto</span>(<span class="ruby-value">1</span>).<span class="ruby-identifier">each</span> { 
+        <span class="ruby-operator">|</span><span class="ruby-identifier">div</span><span class="ruby-operator">|</span> 
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">div</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">maxDel</span> <span class="ruby-keyword">and</span> <span class="ruby-operator">!</span><span class="ruby-identifier">simple</span>(<span class="ruby-identifier">div</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">div</span> <span class="ruby-operator">%</span> <span class="ruby-value">2</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">num</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">div</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">div</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>
+            <span class="ruby-identifier">maxDel</span> = <span class="ruby-identifier">div</span>            
+        <span class="ruby-keyword">end</span>        
+    }
+    <span class="ruby-identifier">num</span>.<span class="ruby-identifier">digits</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">dig</span><span class="ruby-operator">|</span> <span class="ruby-identifier">mult</span> <span class="ruby-operator">*=</span> <span class="ruby-identifier">dig</span>}
+   
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Максимальный непростой нечётный делитель числа, #{maxDel}&quot;</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Произведение цифр данного числа, #{mult}&quot;</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">mult</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;\nНевозможно найти нод т.к произведение цифр числа равно нулю&quot;</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">while</span> <span class="ruby-identifier">maxDel</span><span class="ruby-operator">!=</span><span class="ruby-identifier">mult</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">maxDel</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">mult</span>
+            <span class="ruby-identifier">maxDel</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">mult</span>
+        <span class="ruby-keyword">else</span> <span class="ruby-identifier">mult</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">maxDel</span>    
+        <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">maxDel</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-rotateLeftByOnePos" class="method-detail ">
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">rotateLeftByOnePos</span><span
+              class="method-args">(arr)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="rotateLeftByOnePos-source">
+            <pre><span class="ruby-comment"># File LAB1/TASK4/task4.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rotateLeftByOnePos</span>(<span class="ruby-identifier">arr</span>)
+  <span class="ruby-identifier">arr</span>.<span class="ruby-identifier">rotate</span>(<span class="ruby-value">1</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-simple" class="method-detail ">
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">simple</span><span
+              class="method-args">(num)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="simple-source">
+            <pre><span class="ruby-comment"># File LAB1/TASK2/methods.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">simple</span>(<span class="ruby-identifier">num</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">num</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">1</span>
+    <span class="ruby-value">2</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-constant">Math</span>.<span class="ruby-identifier">sqrt</span>(<span class="ruby-identifier">num</span>).<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">each</span>  {<span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">num</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>}
+    <span class="ruby-comment"># Math.sqrt(num).to_i.downto(2).each {|i| return false if num % i == 0}</span>
+    <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-unigElemsAndCount" class="method-detail ">
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-name">unigElemsAndCount</span><span
+              class="method-args">(arr)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+        </div>
+
+        <div class="method-description">
+          <p>1.51. Для введенного списка построить два списка L1 и L2, где элементы L1 это неповторяющиеся элементы исходного списка, а элемент списка L2 с номером i показывает, сколько раз элемент списка L1 с таким номером повторяется в исходном.</p>
+
+          <div class="method-source-code" id="unigElemsAndCount-source">
+            <pre><span class="ruby-comment"># File LAB1/TASK4/task4.rb, line 59</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">unigElemsAndCount</span>(<span class="ruby-identifier">arr</span>)
+  <span class="ruby-identifier">l1</span> = <span class="ruby-identifier">arr</span>.<span class="ruby-identifier">uniq</span>
+  <span class="ruby-identifier">l2</span> = <span class="ruby-identifier">l1</span>.<span class="ruby-identifier">clone</span>
+  <span class="ruby-identifier">l2</span>.<span class="ruby-identifier">collect!</span>.<span class="ruby-identifier">with_index</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span> = <span class="ruby-identifier">arr</span>.<span class="ruby-identifier">count</span>(<span class="ruby-identifier">l2</span>[<span class="ruby-identifier">i</span>]) }
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">arr</span>.<span class="ruby-identifier">inspect</span>, <span class="ruby-identifier">l1</span>.<span class="ruby-identifier">inspect</span>, <span class="ruby-identifier">l2</span>.<span class="ruby-identifier">inspect</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.5.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
