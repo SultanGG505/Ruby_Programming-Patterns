@@ -2,6 +2,7 @@
 
 require 'glimmer-dsl-libui'
 require_relative 'tab_students'
+require_relative  'edit.rb'
 
 class MainWindow
   include Glimmer
