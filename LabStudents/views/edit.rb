@@ -1,8 +1,5 @@
 class Contact
   def edit(field_name)
-    if field_name == 'Гит'
-      return false
-    end
     if field_name == 'Телеграм'
       return false
     end
@@ -10,6 +7,15 @@ class Contact
       return false
     end
     if field_name == 'Телефон'
+      return false
+    else
+      return true
+    end
+  end
+end
+class Git
+  def edit(field_name)
+    if field_name == 'Гит'
       return false
     else
       return true

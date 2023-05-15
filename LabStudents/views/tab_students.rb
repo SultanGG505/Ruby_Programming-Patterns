@@ -149,6 +149,13 @@ class TabStudents
             @controller.show_modal_edit(@current_page, STUDENTS_PER_PAGE, @table.selection,FIO.new) unless @table.selection.nil?
           }
         }
+        button('Изменить гит') {
+          stretchy false
+
+          on_clicked {
+            @controller.show_modal_edit(@current_page, STUDENTS_PER_PAGE, @table.selection, Git.new) unless @table.selection.nil?
+          }
+        }
         button('Изменить контакты') {
           stretchy false
 
