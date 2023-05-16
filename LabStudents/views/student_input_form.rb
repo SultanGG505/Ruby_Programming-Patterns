@@ -9,7 +9,7 @@ require_relative 'edit.rb'
 class StudentInputForm
   include Glimmer
 
-  def initialize(controller, edit, lamb, existing_student = nil)
+  def initialize(controller, edit, lamb = nil , existing_student = nil)
     @existing_student = existing_student.to_hash unless existing_student.nil?
     @controller = controller
     @entries = {}

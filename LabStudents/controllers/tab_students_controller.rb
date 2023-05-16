@@ -33,10 +33,10 @@ class TabStudentsController
     @view.create.show
   end
 
-  def show_modal_add
+  def show_modal_add(current_page, per_page)
     LoggerHolder.instance.debug('TabStudentsController: showing modal (add)')
     controller = StudentInputFormControllerCreate.new(self)
-    view = StudentInputForm.new(controller, AddAll.new)
+    view = StudentInputForm.new(controller, AddAll.new,  lambda {refresh_data(current_page, per_page)})
     controller.set_view(view)
     view.create.show
   end
