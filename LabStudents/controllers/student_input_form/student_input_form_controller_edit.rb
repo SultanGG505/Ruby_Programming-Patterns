@@ -1,15 +1,18 @@
 # frozen_string_literal: true
 
 require 'win32api'
+require './LabStudents/util/logger_holder'
 
 class StudentInputFormControllerEdit
   def initialize(parent_controller, existing_student_id)
     @parent_controller = parent_controller
     @existing_student_id = existing_student_id
+    LoggerHolder.instance.debug('StudentInputFormControllerEdit: initialized')
   end
 
   def set_view(view)
     @view = view
+    LoggerHolder.instance.debug('StudentInputFormControllerEdit: view set')
   end
 
   def on_view_created
@@ -36,11 +39,12 @@ class StudentInputFormControllerEdit
   def process_fields(fields)
     begin
       new_student = Student.from_hash(fields)
-
+      LoggerHolder.instance.debug('StudentInputFormControllerEdit: replacing student in DB')
       @student_rep.replace_student(@existing_student_id, new_student)
 
       @view.close
     rescue ArgumentError => e
+      LoggerHolder.instance.debug("StudentInputFormControllerEdit: wrong fields: #{e.message}")
       api = Win32API.new('user32', 'MessageBox', ['L', 'P', 'P', 'L'], 'I')
       api.call(0, e.message, 'Error', 0)
     end
@@ -49,6 +53,8 @@ class StudentInputFormControllerEdit
   private
 
   def on_db_conn_error
+    LoggerHolder.instance.debug('StudentInputFormControllerEdit: DB connection error:')
+    LoggerHolder.instance.error(error.message)
     api = Win32API.new('user32', 'MessageBox', ['L', 'P', 'P', 'L'], 'I')
     api.call(0, "No connection to DB", "Error", 0)
     @view.close
