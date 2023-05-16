@@ -47,7 +47,7 @@ class TabStudentsController
     @data_list.select_element(student_num)
     student_id = @data_list.selected_id
     controller = StudentInputFormControllerEdit.new(self, student_id)
-    view = StudentInputForm.new(controller, edit)
+    view = StudentInputForm.new(controller, edit, lambda {refresh_data(current_page, per_page)})
     controller.set_view(view)
     view.create.show
   end

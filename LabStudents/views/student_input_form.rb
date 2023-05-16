@@ -9,11 +9,12 @@ require_relative 'edit.rb'
 class StudentInputForm
   include Glimmer
 
-  def initialize(controller, edit, existing_student = nil)
+  def initialize(controller, edit, lamb, existing_student = nil)
     @existing_student = existing_student.to_hash unless existing_student.nil?
     @controller = controller
     @entries = {}
     @edit = edit
+    @lamb = lamb
   end
 
   def on_create
@@ -42,10 +43,12 @@ class StudentInputForm
           stretchy false
 
           on_clicked {
+
             values = @entries.transform_values { |v| v.text.force_encoding("utf-8").strip }
             values.transform_values! { |v| v.empty? ? nil : v}
 
             @controller.process_fields(values)
+            @lamb.call
           }
         }
       }
